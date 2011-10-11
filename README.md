@@ -2,6 +2,8 @@
 
 Class that creates table header column rows for sorting.
 
+Almost every CMS have tables that need sorting on all or some columns, so i decided to create class, that helps create header rows and handles everything.
+
 ## Example & Usage
 http://darklow.fuel.first.lv/tablesort
 
