@@ -1,4 +1,4 @@
-# TableSort package
+# TableSort package for Fuel PHP
 
 Class that creates table header column rows for sorting.
 
