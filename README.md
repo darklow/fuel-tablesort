@@ -2,7 +2,7 @@
 
 Class that creates table header column rows for sorting.
 
-## Example
+## Example & Usage
 http://darklow.fuel.first.lv/tablesort
 
 ## Features
@@ -11,5 +11,3 @@ http://darklow.fuel.first.lv/tablesort
 - Full template config
 - Works in combination with Pagination class
 - Based on same principles as Paginatin class
-
-## TODO
