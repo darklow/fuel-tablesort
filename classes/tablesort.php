@@ -208,7 +208,7 @@ class TableSort {
 		
 		foreach(static::$columns as $column)
 		{
-			$sort_key = isset($column[1]) ? $column[1] : strtolower($column[0]);
+			$sort_key 	= (is_array($column) ? isset($column[1]) ? $column[1] : strtolower($column[0]) : $column);
 			$col_attr	= (is_array($column) && isset($column[2]) ? $column[2] : array());
 			
 			$new_direction = static::$direction;
@@ -229,7 +229,7 @@ class TableSort {
 				
 			}
 			
-			if(is_array($column)){
+			if(is_array($column) && (!isset($column[1]) || isset($column[1]) && $column[1] !== false)){
 				
 				$url 			= rtrim(static::$base_url, '/').(static::$current_page ? '/'.static::$current_page : '');
 				$url 			.= '/'.$sort_key.static::$uri_delimiter.$new_direction;
@@ -239,6 +239,10 @@ class TableSort {
 				$cell_content 	.= static::$template['link_end'];
 				
 			}else{
+				if(is_array($column))
+				{
+					$column = $column[0];
+				}
 				$cell_content = static::$template['nolink_start'].$column.static::$template['nolink_end'];	
 			}
 			
